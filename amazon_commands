@@ -10,10 +10,21 @@ rvm notes
 #install all the deps mentioned in rvm notes
 yum install libxml2-devel
 yum install libxslt libxslt-devel
+rvm install 1.9.2
+rvm use ruby-1.9.2 --default
+gem install rails
 hg clone $SOURCE_CODE
 bundle install
 rails server
 
+for apache -
+yum search apache
+#install apache2, apache2-devel, apr, apr-utils, apr-dev, apr-utils-dev
+#chmod the app parent folder to 755 and app folder to -R 755
+#chgrp the app folder to apache/www-data(whoever is running apache)
+#run bundle install with --deployment parameter
+bundle install --deployment
+try to run. If fails, chmod -R 755 the the vendor/bundle folder
 
 for espeak-
 install all the gems i.e sinatra espeak-ruby
