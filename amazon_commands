@@ -1,0 +1,29 @@
+ssh -i key.pem ec2-user@publicdns
+
+yum groupinstall 'Development Tools'
+#install rvm
+yum install git
+yum install curl curl-devel
+bash < <(curl -s https://rvm.beginrescueend.com/install/rvm)
+#follow the post installation  steps given at https://rvm.beginrescueend.com/rvm/install/ and restart the shell
+rvm notes
+#install all the deps mentioned in rvm notes
+yum install libxml2-devel
+yum install libxslt libxslt-devel
+hg clone $SOURCE_CODE
+bundle install
+rails server
+
+
+for espeak-
+install all the gems i.e sinatra espeak-ruby
+install llibportaudio from source
+install espeak from source(while installing copy portaudio19.h to portaudio.h in src directory of espeak)
+create a symlink for /usr/local/lib/libportaudio in /usr/lib
+install lame from source http://sourceforge.net/projects/lame/files/lame/3.98.4/lame-3.98.4.tar.gz/download
+git clone espeak-http source
+
+thin + nginx -
+gem install thin
+yum install nginx.i686
+
